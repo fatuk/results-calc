@@ -39,7 +39,7 @@
 							{{q4.operations | currency:"$":0}}
 						</td>
 						<td>
-							Operation for Q4 = Operation Q1 + Bonus + Profit from Initiative Q4 (which is InitRevenue - InitExpense)
+							Operation for Q4 = Operation Q1 + Growth rate + Profit from Initiative Q4 (which is InitRevenue - InitExpense)
 						</td>
 					</tr>
 					<!-- Initiatives -->
@@ -162,9 +162,9 @@
 				</tbody>
 			</table>
 		</fieldset>
-		<!-- Profit and bonus -->
+		<!-- Profit and Growth rate -->
 		<fieldset>
-			<legend>Profit and bonus:</legend>
+			<legend>Profit and Growth rate:</legend>
 			<table>
 				<tbody>
 					<!-- Profit -->
@@ -179,10 +179,10 @@
 							Total Revenue - Total Expense
 						</td>
 					</tr>
-					<!-- Bonus -->
+					<!-- Growth rate -->
 					<tr>
 						<td>
-							Bonus
+							Growth rate
 						</td>
 						<td>
 							{{q4.bonus | currency:"$":0}}
@@ -208,7 +208,7 @@
 							{{q4.totalEarnings | currency:"$":0}}
 						</td>
 						<td>
-							Profit Q4 + Bonus Q4
+							Profit Q4 + Growth rate Q4
 						</td>
 					</tr>
 				</tbody>
@@ -228,7 +228,7 @@
 							{{q4.operationsAndBonus | currency:"$":0}}
 						</td>
 						<td>
-							Operations Q4 + Bonus Q4 (start operation for Q4)
+							Operations Q4 + Growth rate Q4 (start operation for Q4)
 						</td>
 					</tr>
 				</tbody>
