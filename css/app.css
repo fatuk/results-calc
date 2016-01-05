@@ -1,1 +1,46 @@
-input,td{padding:10px}body{font-family:sans-serif}.form__row{width:100%;display:inline-block;margin-bottom:10px}.label__text{width:200px;display:inline-block}fieldset{margin-bottom:30px}h1,h2,h3,h4{margin:0}table{width:100%}thead{font-weight:700}td{border:1px solid #ccc}.legend{cursor:pointer}.legend:hover{color:red}input{background:#ffffe0}input[readonly]{opacity:.5}
+body {
+  font-family: sans-serif;
+}
+.form__row {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.label__text {
+  width: 200px;
+  display: inline-block;
+}
+fieldset {
+  margin-bottom: 30px;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+table {
+  width: 100%;
+}
+thead {
+  font-weight: bold;
+}
+td {
+  padding: 10px;
+  border: solid 1px #ccc;
+}
+.legend {
+  cursor: pointer;
+}
+.legend:hover {
+  color: red;
+}
+input {
+  background: lightyellow;
+  padding: 10px;
+}
+input[readonly] {
+  opacity: .5;
+}
+
+/*# sourceMappingURL=../css/app.css.map */
