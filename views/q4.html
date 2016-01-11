@@ -9,6 +9,9 @@
 			}}</strong>,
 			Operations: <strong>{{
 				q4.operations | currency:"$":0
+			}}</strong>,
+			Growth rate: <strong>{{
+				q4.bonus | currency:"$":0
 			}}</strong>
 	</legend>
 	<div ng-show="toggleQ4">
@@ -39,7 +42,7 @@
 							{{q4.operations | currency:"$":0}}
 						</td>
 						<td>
-							Operation for Q4 = Operation Q1 + Growth rate + Profit from Initiative Q4 (which is InitRevenue - InitExpense)
+							Operations for Q4 = Operations Q1 + Growth rate + Profit from Initiatives Q4 (which is InitRevenue - InitExpense)
 						</td>
 					</tr>
 					<!-- Initiatives -->
@@ -75,7 +78,7 @@
 							<input step="500" type="number" ng-model="q4.quiz">
 						</td>
 						<td>
-							We do NOT reward $ for quiz
+							Correct answers
 						</td>
 					</tr>
 					<!-- Total -->
@@ -87,7 +90,7 @@
 							{{q4.totalRevenue | currency:"$":0}}
 						</td>
 						<td>
-							Sum of (Operation Q4 + Init Revenue + Activity + Quiz)
+							Sum of (Operations Q4 + Init Revenue + Activity + Quiz)
 						</td>
 					</tr>
 				</tbody>
@@ -164,7 +167,7 @@
 		</fieldset>
 		<!-- Profit and Growth rate -->
 		<fieldset>
-			<legend>Profit and Growth rate:</legend>
+			<legend>Profit</legend>
 			<table>
 				<tbody>
 					<!-- Profit -->
@@ -177,18 +180,6 @@
 						</td>
 						<td>
 							Total Revenue - Total Expense
-						</td>
-					</tr>
-					<!-- Growth rate -->
-					<tr>
-						<td>
-							Growth rate
-						</td>
-						<td>
-							{{q4.bonus | currency:"$":0}}
-						</td>
-						<td>
-							10% from Operation
 						</td>
 					</tr>
 				</tbody>
@@ -209,26 +200,6 @@
 						</td>
 						<td>
 							Profit Q4
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</fieldset>
-		<!-- Start balance for next quarter -->
-		<fieldset>
-			<legend>Total profit from normal operations:</legend>
-			<table>
-				<tbody>
-					<!-- Total -->
-					<tr>
-						<td>
-							Total profit from normal operations (operations For Q4):
-						</td>
-						<td>
-							{{q4.operationsAndBonus | currency:"$":0}}
-						</td>
-						<td>
-							Operations Q4 + Growth rate Q4 (start operation for Q4)
 						</td>
 					</tr>
 				</tbody>

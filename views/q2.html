@@ -9,6 +9,9 @@
 			}}</strong>,
 			Operations: <strong>{{
 				q2.operations | currency:"$":0
+			}}</strong>,
+			Growth rate: <strong>{{
+				q2.bonus | currency:"$":0
 			}}</strong>
 	</legend>
 	<div ng-show="toggleQ2">
@@ -39,7 +42,7 @@
 							{{q2.operations | currency:"$":0}}
 						</td>
 						<td>
-							Operation for Q2 = Operation Q1 + Growth rate + Profit from Initiative Q2 (which is InitRevenue - InitExpense)
+							Operations for Q2 = Operations Q1 + Growth rate + Profit from Initiative Q2 (which is InitRevenue - InitExpense)
 						</td>
 					</tr>
 					<!-- Initiatives -->
@@ -75,7 +78,7 @@
 							<input step="500" type="number" ng-model="q2.quiz">
 						</td>
 						<td>
-							We do NOT reward $ for quiz
+							Correct answers
 						</td>
 					</tr>
 					<!-- Total -->
@@ -87,7 +90,7 @@
 							{{q2.totalRevenue | currency:"$":0}}
 						</td>
 						<td>
-							Sum of (Operation Q2 + Init Revenue + Activity + Quiz)
+							Sum of (Operations Q2 + Init Revenue + Activity + Quiz)
 						</td>
 					</tr>
 				</tbody>
@@ -164,7 +167,7 @@
 		</fieldset>
 		<!-- Profit and Growth rate -->
 		<fieldset>
-			<legend>Profit and Growth rate:</legend>
+			<legend>Profit</legend>
 			<table>
 				<tbody>
 					<!-- Profit -->
@@ -177,18 +180,6 @@
 						</td>
 						<td>
 							Total Revenue - Total Expense
-						</td>
-					</tr>
-					<!-- Growth rate -->
-					<tr>
-						<td>
-							Growth rate
-						</td>
-						<td>
-							{{q2.bonus | currency:"$":0}}
-						</td>
-						<td>
-							10% from Operation
 						</td>
 					</tr>
 				</tbody>
@@ -219,16 +210,28 @@
 			<legend>Total profit from normal operations:</legend>
 			<table>
 				<tbody>
+					<!-- Growth rate -->
+					<tr>
+						<td>
+							Growth rate
+						</td>
+						<td>
+							{{q2.bonus | currency:"$":0}}
+						</td>
+						<td>
+							10% from Operations
+						</td>
+					</tr>
 					<!-- Total -->
 					<tr>
 						<td>
-							Total profit from normal operations (operations For Q3):
+							Base start operations for Q3:
 						</td>
 						<td>
 							{{q2.operationsAndBonus | currency:"$":0}}
 						</td>
 						<td>
-							Operations Q2 + Growth rate Q2 (start operation for Q3)
+							Operations Q2 + Growth rate Q2
 						</td>
 					</tr>
 				</tbody>

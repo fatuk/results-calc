@@ -33,7 +33,7 @@
 							{{finalResult.operations | currency:"$":0}}
 						</td>
 						<td>
-							Operation for Q4 = Operation Q1 + Growth rate + Profit from Initiative Q4 (which is InitRevenue - InitExpense)
+							Sum of all Operations Revenue
 						</td>
 					</tr>
 					<!-- Initiatives -->
@@ -45,7 +45,7 @@
 							{{finalResult.initiativeRevenue | currency:"$":0}}
 						</td>
 						<td>
-							Initiatives Revenue
+							Sum of all Initiatives Revenue
 						</td>
 					</tr>
 					<!-- Activites -->
@@ -57,7 +57,7 @@
 							{{finalResult.activity | currency:"$":0}}
 						</td>
 						<td>
-							Correct answers + time bonus
+							Sum of all correct answers in all activities + time bonus
 						</td>
 					</tr>
 					<!-- Quiz -->
@@ -69,7 +69,7 @@
 							{{finalResult.quiz | currency:"$":0}}
 						</td>
 						<td>
-							We do NOT reward $ for quiz
+							Sum of all correct answers in all quizzes
 						</td>
 					</tr>
 					<!-- Total -->
@@ -81,7 +81,7 @@
 							{{finalResult.totalRevenue | currency:"$":0}}
 						</td>
 						<td>
-							Sum of (Operation Q4 + Init Revenue + Activity + Quiz)
+							Sum of (Operation + Init Revenue + Activity + Quiz)
 						</td>
 					</tr>
 				</tbody>
@@ -114,7 +114,7 @@
 							{{finalResult.budget | currency:"$":0}}
 						</td>
 						<td>
-							Total spend on budget items
+							Sum of total spend on all budget items
 						</td>
 					</tr>
 					<!-- Initiatives -->
@@ -126,7 +126,7 @@
 							{{finalResult.initiativeExpense | currency:"$":0}}
 						</td>
 						<td>
-							Initiatives Expense
+							Sum of total Initiatives Expense
 						</td>
 					</tr>
 					<!-- Events -->
@@ -138,7 +138,7 @@
 							{{finalResult.eventMoney | currency:"$":0}}
 						</td>
 						<td>
-							Events Expense
+							Sum of total Events Expense
 						</td>
 					</tr>
 					<!-- Total -->
@@ -147,10 +147,10 @@
 							Total
 						</td>
 						<td>
-							{{q4.totalExpense | currency:"$":0}}
+							{{finalResult.totalExpense | currency:"$":0}}
 						</td>
 						<td>
-							Sum of (Budget + Init expense + Event)
+							Sum of Budget + Initiatives + Event expense
 						</td>
 					</tr>
 				</tbody>
@@ -158,7 +158,7 @@
 		</fieldset>
 		<!-- Profit and Growth rate -->
 		<fieldset>
-			<legend>Profit and Growth rate:</legend>
+			<legend>Profit</legend>
 			<table>
 				<tbody>
 					<!-- Profit -->
@@ -167,22 +167,10 @@
 							Profit
 						</td>
 						<td>
-							{{q4.profit | currency:"$":0}}
+							{{finalResult.profit | currency:"$":0}}
 						</td>
 						<td>
 							Total Revenue - Total Expense
-						</td>
-					</tr>
-					<!-- Growth rate -->
-					<tr>
-						<td>
-							Growth rate
-						</td>
-						<td>
-							{{q4.bonus | currency:"$":0}}
-						</td>
-						<td>
-							10% from Operation
 						</td>
 					</tr>
 				</tbody>
@@ -199,10 +187,10 @@
 							Total earnings
 						</td>
 						<td>
-							{{q4.totalEarnings | currency:"$":0}}
+							{{finalResult.totalEarnings | currency:"$":0}}
 						</td>
 						<td>
-							Profit Q4
+							Profit from all Quarters
 						</td>
 					</tr>
 				</tbody>
