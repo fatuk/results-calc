@@ -11,7 +11,7 @@
 				q4.operations | currency:"$":0
 			}}</strong>,
 			Growth rate: <strong>{{
-				q4.bonus | currency:"$":0
+				q4.growthRate | currency:"$":0
 			}}</strong>
 	</legend>
 	<div ng-show="toggleQ4">
@@ -42,7 +42,7 @@
 							{{q4.operations | currency:"$":0}}
 						</td>
 						<td>
-							Operations for Q4 = Operations Q1 + Growth rate + Profit from Initiatives Q4 (which is InitRevenue - InitExpense)
+							Operations Q3 + Profit from Initiative Q3 + Growth rate Q3
 						</td>
 					</tr>
 					<!-- Initiatives -->

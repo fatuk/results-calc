@@ -11,7 +11,7 @@
 				q3.operations | currency:"$":0
 			}}</strong>,
 			Growth rate: <strong>{{
-				q3.bonus | currency:"$":0
+				q3.growthRate | currency:"$":0
 			}}</strong>
 	</legend>
 	<div ng-show="toggleQ3">
@@ -42,7 +42,7 @@
 							{{q3.operations | currency:"$":0}}
 						</td>
 						<td>
-							Operations for Q3 = Operations Q1 + Growth rate + Profit from Initiatives Q3 (which is InitRevenue - InitExpense)
+							Operations Q2 + Profit from Initiative Q2 + Growth rate Q2
 						</td>
 					</tr>
 					<!-- Initiatives -->
@@ -205,33 +205,57 @@
 				</tbody>
 			</table>
 		</fieldset>
-		<!-- Start balance for next quarter -->
+		<!-- Operation for the next quarter -->
 		<fieldset>
-			<legend>Total profit from normal operations:</legend>
+			<legend>Operation for the next quarter:</legend>
 			<table>
 				<tbody>
+					<!-- Operations -->
+					<tr>
+						<td>
+							Operations
+						</td>
+						<td>
+							{{q3.operations | currency:"$":0}}
+						</td>
+						<td>
+							Operations Q2 + Profit from Initiative Q2 + Growth rate Q2
+						</td>
+					</tr>
+					<!-- Profit from Initiative -->
+					<tr>
+						<td>
+							Profit from Initiatives
+						</td>
+						<td>
+							{{q3.initiativesProfit | currency:"$":0}}
+						</td>
+						<td>
+							Q3 Initiatives Revenue - Q3 Initiatives Expense
+						</td>
+					</tr>
 					<!-- Growth rate -->
 					<tr>
 						<td>
 							Growth rate
 						</td>
 						<td>
-							{{q3.bonus | currency:"$":0}}
+							{{q3.growthRate | currency:"$":0}}
 						</td>
 						<td>
-							10% from Operations
+							(Operations Q3 + Initiatives profit Q3) * 10%
 						</td>
 					</tr>
 					<!-- Total -->
 					<tr>
 						<td>
-							Base start operations for Q4:
+							Operations for Q4:
 						</td>
 						<td>
-							{{q3.operationsAndBonus | currency:"$":0}}
+							{{q3.nextQuarterOperations | currency:"$":0}}
 						</td>
 						<td>
-							Operations Q3 + Growth rate Q3
+							Operations Q3 + Profit from Initiative Q3 + Growth rate Q3
 						</td>
 					</tr>
 				</tbody>

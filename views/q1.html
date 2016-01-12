@@ -10,7 +10,7 @@
 				q1.operations | currency:"$":0
 			}}</strong>,
 			Growth rate: <strong>{{
-				q1.bonus | currency:"$":0
+				q1.growthRate | currency:"$":0
 			}}</strong>
 	</legend>
 	<div ng-show="toggleQ1">
@@ -41,7 +41,7 @@
 							{{q1.operations | currency:"$":0}}
 						</td>
 						<td>
-							Operations for Q1 = Start Balance + Profit from Initiative Q1 (which is InitRevenue - InitExpense)
+							Operations for Q1 = Start Balance
 						</td>
 					</tr>
 					<!-- Initiatives -->
@@ -204,33 +204,57 @@
 				</tbody>
 			</table>
 		</fieldset>
-		<!-- Start balance for next quarter -->
+		<!-- Operation for the next quarter -->
 		<fieldset>
-			<legend>Total profit from normal operations:</legend>
+			<legend>Operation for the next quarter:</legend>
 			<table>
 				<tbody>
+					<!-- Operations -->
+					<tr>
+						<td>
+							Operations
+						</td>
+						<td>
+							{{q1.operations | currency:"$":0}}
+						</td>
+						<td>
+							Operations for Q1 = Start Balance
+						</td>
+					</tr>
+					<!-- Profit from Initiative -->
+					<tr>
+						<td>
+							Profit from Initiatives
+						</td>
+						<td>
+							{{q1.initiativesProfit | currency:"$":0}}
+						</td>
+						<td>
+							Q1 Initiatives Revenue - Q1 Initiatives Expense
+						</td>
+					</tr>
 					<!-- growth rate -->
 					<tr>
 						<td>
 							Growth rate
 						</td>
 						<td>
-							{{q1.bonus | currency:"$":0}}
+							{{q1.growthRate | currency:"$":0}}
 						</td>
 						<td>
-							10% from Operations Q1
+							(Operations Q1 + Initiatives profit Q1) * 10%
 						</td>
 					</tr>
 					<!-- Total -->
 					<tr>
 						<td>
-							Base start operations for Q2:
+							Operations for Q2:
 						</td>
 						<td>
-							{{q1.operationsAndBonus | currency:"$":0}}
+							{{q1.nextQuarterOperations | currency:"$":0}}
 						</td>
 						<td>
-							Operations Q1 + Growth rate Q1
+							Operations Q1 + Profit from Initiative Q1 + Growth rate Q1
 						</td>
 					</tr>
 				</tbody>
